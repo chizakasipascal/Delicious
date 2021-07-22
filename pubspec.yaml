@@ -65,4 +65,4 @@ flutter:
   fonts:
     - family: Butter
       fonts:
-        - asset: assets/fonts/Butter Food.ttf
+        - asset: assets/fonts/ButterFood.ttf
