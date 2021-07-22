@@ -1,0 +1,3 @@
+class Mediaquery {
+  Mediaquery._();
+}
