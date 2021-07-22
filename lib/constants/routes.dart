@@ -6,10 +6,10 @@ import 'package:flutter/material.dart';
 class Routes {
   Routes._();
 
-  static const String bonappetit = '/bonappetit';
+  static const String welcom = '/welcom';
 
   static final routes = <String, WidgetBuilder>{
-    bonappetit: (BuildContext context) => BonAppetit(),
+    welcom: (BuildContext context) => Welcome(),
 
   };
 }

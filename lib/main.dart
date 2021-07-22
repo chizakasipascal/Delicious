@@ -1,6 +1,9 @@
 
+import 'package:bonappetit/app.dart';
+import 'package:bonappetit/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloc/bloc.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -30,8 +33,7 @@ class BonAppetitBlocObserver extends BlocObserver {
 }
 
 void main() async {
-  // SystemChrome.setSystemUIOverlayStyle(
-  //     SystemUiOverlayStyle(statusBarColor: Blue));
+
 
   initializeDateFormatting().then((_) => runApp(BonAppetit()));
 /*
@@ -49,7 +51,7 @@ void main() async {
             create: (context) => SubjectBloc(),
           ),
         ],
-        child: BonAppetit(),
+        child: Welcome(),
       ),
     );
   } catch (error, stacktrace) {
