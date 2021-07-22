@@ -27,11 +27,16 @@ dependencies:
     sdk: flutter          
 
   cupertino_icons: ^1.0.3
+  uuid: ^3.0.4
   hive: ^2.0.4
-  animated_icon_button: ^1.0.2
-  clippy_flutter: ^2.0.0-nullsafety.1
-  connectivity: ^3.0.6
+  table_calendar: ^3.0.1
+  popover: ^0.2.6+2
   equatable: ^2.0.3
+
+  clippy_flutter: ^2.0.0-nullsafety.1
+  animated_icon_button: ^1.0.2
+  connectivity: ^3.0.6
+
   flutter_bloc: ^7.0.1
   font_awesome_flutter: ^9.0.0-nullsafety
   flutter_local_notifications: ^6.0.0
@@ -44,10 +49,9 @@ dependencies:
   provider: ^5.0.0
   rxdart: ^0.27.1
   dio: ^4.0.0 
-  shared_preferences: ^2.0.6 
-  table_calendar: ^3.0.1
-  popover: ^0.2.6+2
-  uuid: ^3.0.4
+  shared_preferences: ^2.0.6
+  introduction_screen: ^2.1.0
+
 
 dev_dependencies:
   flutter_test:
@@ -58,3 +62,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+  fonts:
+    - family: Butter
+      fonts:
+        - asset: assets/fonts/Butter Food.ttf

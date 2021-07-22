@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'constants/constanst.dart';
 import 'views/screens/screens.dart';
 
-class Dawa extends StatelessWidget {
+class BonAppetit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
@@ -16,7 +16,7 @@ class Dawa extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: themeData,
       title: Strings.appName,
-      home: BonAppetit(),
+      home: Welcome(),
       //initialRoute: '/',
       routes: Routes.routes,
     );
