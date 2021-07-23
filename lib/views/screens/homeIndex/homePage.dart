@@ -16,50 +16,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              height: 170,
-              width: size.width,
-              child: Card(
-                color: OrangeColor,
-                elevation: 2,
-                shadowColor: GreyWithOpacity,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            "Goute a nos plats",
-                            style: TextStyle(
-                              color: WhiteColor,
-                              fontSize: FontSize.max_min,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(width: 20),
-                          SizedBox(
-                            height: 50.0,
-                            width: 50.0,
-                            child: Image.asset(Assets.commande),
-                          )
-                        ],
-                      ),
-                      Text(
-                        "les plus populaire.",
-                        style: TextStyle(
-                          color: WhiteColor,
-                          fontSize: FontSize.max_meduim - 2,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+            AnnonceCard(size: size),
             SizedBox(height: 10),
             Text(
               "Top semaine",
@@ -79,4 +36,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
