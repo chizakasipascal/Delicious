@@ -1,6 +1,6 @@
 class Assets {
   static const String pathAssets = "assets/images/";
-  static const String pathIcons = "assets/images/icons";
+  static const String pathIcons = "assets/icons/";
   Assets._();
 
   static const String roundPlat = "${pathAssets}roundPlat.jpg";
