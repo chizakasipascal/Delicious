@@ -16,6 +16,11 @@ class RestaurantPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            AnnonceCard(size: size),
+            SizedBox(height: 10),
+            NourritureCard(size: size),
+            SizedBox(height: 10),
+            NourritureCard(size: size),
             SizedBox(height: 10),
             NourritureCard(size: size),
             SizedBox(height: 10),
