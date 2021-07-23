@@ -219,7 +219,8 @@ class Welcome extends StatelessWidget {
                                 color: WhiteColor, fontSize: FontSize.meduim),
                           ),
                           color: OrangeColor,
-                          onPressed: () {},
+                          onPressed: () =>
+                              Navigator.pushNamed(context, Routes.home),
                         ),
                       ),
                       SizedBox(height: 10),
