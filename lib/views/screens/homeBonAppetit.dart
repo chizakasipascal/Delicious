@@ -1,5 +1,6 @@
 import 'package:bonappetit/constants/constanst.dart';
 import 'package:bonappetit/utils/colors.dart';
+import 'package:bonappetit/views/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:bonappetit/views/screens/homeIndex/homeIndex.dart';
 
@@ -24,10 +25,18 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-        controller: _pageController,
-        physics: NeverScrollableScrollPhysics(),
-        children: _pages,
+      body: Stack(
+        children: [
+          Image.asset(
+              Assets.burger), //TODO: A modifier avec un background approprier
+          BackgroundBlur(
+            child: PageView(
+              controller: _pageController,
+              physics: NeverScrollableScrollPhysics(),
+              children: _pages,
+            ),
+          ),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
