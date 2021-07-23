@@ -39,7 +39,7 @@ class HomePage extends StatelessWidget {
                       SizedBox(
                         height: 50.0,
                         width: 50.0,
-                        child: Placeholder(),
+                        child: Image.asset(Assets.commande),
                       )
                     ],
                   ),
