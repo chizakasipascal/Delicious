@@ -11,6 +11,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  PageController _pageController = new PageController();
   int _selectedItem = 0;
   var _pages = [
     HomePage(),
@@ -24,31 +25,41 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
+        controller: _pageController,
+        physics: NeverScrollableScrollPhysics(),
         children: _pages,
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
               icon: Image.asset(Assets.home),
-              label: 'Home',
+              label: 'Acceuil',
               tooltip: 'Acceuil'),
           BottomNavigationBarItem(
               icon: Image.asset(Assets.restaurant),
-              label: 'Home',
+              label: 'Restaurant',
               tooltip: 'Restaurant'),
           BottomNavigationBarItem(
               icon: Image.asset(Assets.commande),
-              label: 'Home',
+              label: 'Commande',
               tooltip: 'Commande'),
           BottomNavigationBarItem(
               icon: Image.asset(Assets.parametre),
-              label: 'Home',
+              label: 'Parametre',
               tooltip: 'Parametre'),
           BottomNavigationBarItem(
               icon: Image.asset(Assets.profil),
-              label: 'Home',
+              label: 'Profil',
               tooltip: 'Profil'),
         ],
+        currentIndex: _selectedItem,
+        onTap: (index) {
+          setState(() {
+            _selectedItem = index;
+            _pageController.animateToPage(_selectedItem,
+                duration: Duration(milliseconds: 200), curve: Curves.linear);
+          });
+        },
       ),
     );
   }
