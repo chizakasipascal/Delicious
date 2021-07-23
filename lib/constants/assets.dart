@@ -3,5 +3,5 @@ class Assets {
   Assets._();
 
   static const String roundPlat = "${pathAssets}roundPlat.jpg";
-
+  static const String burger = "${pathAssets}burger.png";
 }
