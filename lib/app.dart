@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
@@ -16,8 +15,8 @@ class BonAppetit extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: themeData,
       title: Strings.appName,
-      home: Welcome(),
-      //initialRoute: '/',
+      home: IntroScreens(),
+      initialRoute: Routes.splash,
       routes: Routes.routes,
     );
   }
