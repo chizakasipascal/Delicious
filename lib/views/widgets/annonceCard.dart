@@ -3,9 +3,11 @@ import 'package:bonappetit/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class AnnonceCard extends StatelessWidget {
+  final Color color;
   const AnnonceCard({
     Key key,
     @required this.size,
+    this.color = OrangeColor,
   }) : super(key: key);
 
   final Size size;
@@ -16,7 +18,7 @@ class AnnonceCard extends StatelessWidget {
       height: 170,
       width: size.width,
       child: Card(
-        color: OrangeColor,
+        color: color,
         elevation: 2,
         shadowColor: GreyWithOpacity,
         child: Padding(
