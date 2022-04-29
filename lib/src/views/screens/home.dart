@@ -11,16 +11,17 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  late double xOffset;
-  late double yOffset;
-  late double scaleFactor;
+  double xOffset = 0;
+  double yOffset = 0;
+
   @override
   void initState() {
-    openDrawer();
+    closeDrawer();
     super.initState();
   }
 
   void openDrawer() => setState(() {
+        print("object");
         xOffset = 230;
         yOffset = 150;
       });
@@ -43,8 +44,7 @@ class _HomeState extends State<Home> {
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 2500),
               child: Container(
-                transform: Matrix4.translationValues(xOffset, yOffset, 0)
-                  ..scale(scaleFactor),
+                transform: Matrix4.translationValues(xOffset, yOffset, 0),
                 child: DelicousHome(onClicked: openDrawer),
               ),
             ),
