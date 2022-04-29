@@ -17,7 +17,13 @@ class CustomerDrawer extends StatelessWidget {
         children: DrawerData.all
             .map(
               (e) => ListTile(
-                title: Text(e.title, style: themeData.textTheme.headline1),
+                title: Text(e.title, style: themeData.textTheme.bodyText2
+
+                    // Theme.of(context)
+                    //     .textTheme
+                    //     .headline5
+                    //     ?.copyWith(color: kWhiteGreyColor),
+                    ),
                 onTap: () {},
               ),
             )
