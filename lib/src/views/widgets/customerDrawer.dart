@@ -43,9 +43,45 @@ class CustomerDrawer extends StatelessWidget {
               ),
             ),
             builDrawerItems(context),
-            const Padding(
-              padding: EdgeInsets.only(left: 20.0),
-              child: Text("data"),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0),
+              child: Container(
+                height: 50.0,
+                width: 150,
+                decoration: const BoxDecoration(
+                  color: KPrimary,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(100),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(2.0),
+                  child: Row(
+                    children: [
+                      const SizedBox(width: 3),
+                      Container(
+                        height: 40,
+                        width: 40,
+                        decoration: const BoxDecoration(
+                          color: kWhiteGreyColor,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(100),
+                          ),
+                        ),
+                        child: const Icon(Icons.close),
+                      ),
+                      const SizedBox(width: 10),
+                      Text(
+                        "Log out",
+                        style: Theme.of(context).textTheme.headline6?.copyWith(
+                              color: kWhiteGreyColor,
+                              fontWeight: FontWeight.normal,
+                            ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             )
           ],
         ),
