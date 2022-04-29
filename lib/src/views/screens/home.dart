@@ -38,40 +38,50 @@ class _HomeState extends State<Home> {
       body: Stack(
         children: [
           SafeArea(child: buildDrawer()),
-          GestureDetector(
-            onTap: closeDrawer,
-            child: AnimatedContainer(
-              duration: const Duration(milliseconds: 2500),
-              child: Container(
-                transform: Matrix4.translationValues(xOffset, yOffset, 0)
-                  ..scale(xscaleFactory),
-                child: DelicousHome(onClicked: openDrawer),
-              ),
-            ),
-          )
+          buildPage(),
+
+          // GestureDetector(
+          //   onTap: closeDrawer(),
+          //   child: AnimatedContainer(
+          //     duration: const Duration(milliseconds: 2500),
+          //     child: Container(
+          //       transform: Matrix4.translationValues(xOffset, yOffset, 0)
+          //         ..scale(0.7),
+          //       child: ClipRRect(
+          //         child: buildPage(),
+          //         borderRadius: const BorderRadius.all(
+          //           Radius.circular(20),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // )
         ],
       ),
     );
   }
 
   Widget buildDrawer() => const CustomerDrawer();
+  Widget buildPage() => const DelicousHome();
 }
 
 class DelicousHome extends StatelessWidget {
-  final Function onClicked;
-  const DelicousHome({Key? key, required this.onClicked}) : super(key: key);
+  final Function? onClicked;
+  const DelicousHome({Key? key, this.onClicked}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () => onClicked,
-          icon: const Icon(Icons.menu),
+    return SizedBox(
+      child: Scaffold(
+        appBar: AppBar(
+          leading: IconButton(
+            onPressed: () => onClicked,
+            icon: const Icon(Icons.menu),
+          ),
         ),
-      ),
-      body: Container(
-        color: Colors.red,
+        body: Container(
+          color: Colors.red,
+        ),
       ),
     );
   }
