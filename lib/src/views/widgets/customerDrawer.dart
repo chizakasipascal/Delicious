@@ -1,5 +1,5 @@
-import 'package:bonappetit/src/const/app_theme.dart';
 import 'package:bonappetit/src/data/data.dart';
+import 'package:bonappetit/src/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class CustomerDrawer extends StatelessWidget {
@@ -17,13 +17,13 @@ class CustomerDrawer extends StatelessWidget {
         children: DrawerData.all
             .map(
               (e) => ListTile(
-                title: Text(e.title, style: themeData.textTheme.bodyText2
-
-                    // Theme.of(context)
-                    //     .textTheme
-                    //     .headline5
-                    //     ?.copyWith(color: kWhiteGreyColor),
-                    ),
+                title: Text(
+                  e.title,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline5
+                      ?.copyWith(color: kWhiteGreyColor),
+                ),
                 onTap: () {},
               ),
             )
