@@ -1,3 +1,4 @@
+import 'package:bonappetit/src/utils/colors.dart';
 import 'package:bonappetit/src/views/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,9 +13,9 @@ class BonAppetit extends StatelessWidget {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]);
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       systemNavigationBarColor: Colors.transparent, // navigation bar color
-      statusBarColor: themeData.primaryColor, // status bar color
+      statusBarColor: kWhiteGreyColor, // status bar color
     ));
 
     return MaterialApp(

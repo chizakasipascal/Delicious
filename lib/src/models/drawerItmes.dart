@@ -1,10 +1,8 @@
+import 'package:flutter/material.dart';
+
 class DrawerItems {
-  final String title;
-  // final IconData icon;
+  final String? title;
+  final IconData? icon;
 
-  const DrawerItems({
-    required this.title,
-
-    // required this.icon
-  }) : super();
+  const DrawerItems({this.title, this.icon}) : super();
 }
