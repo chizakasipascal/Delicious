@@ -1,9 +1,8 @@
+import 'package:bonappetit/src/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 final ThemeData themeData = ThemeData(
-  // Define the default brightness and colors.
-  brightness: Brightness.dark,
-  primaryColor: Colors.lightBlue[800],
+  primaryColor: KPrimary,
 
   // Define the default font family.
   fontFamily: 'Georgia',
@@ -15,7 +14,7 @@ final ThemeData themeData = ThemeData(
     headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
     bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
   ),
-  // visualDensity: VisualDensity.adaptivePlatformDensity,
+  visualDensity: VisualDensity.adaptivePlatformDensity,
   // primaryColor: kRedColor,
   // textTheme: TextTheme(
   // subtitle2: TextStyle(
