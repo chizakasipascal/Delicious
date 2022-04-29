@@ -1,6 +1,6 @@
-const String BaseAsstes = "assets/images/";
+const String baseAsstes = "assets/images/";
 
 class Assets {
   Assets._();
-  static const String ImageAssets = BaseAsstes;
+  static const String imageAssets = baseAsstes;
 }

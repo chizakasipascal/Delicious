@@ -7,7 +7,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Colors.black, body: buildDrawer());
+    return Scaffold(backgroundColor: Colors.green, body: buildDrawer());
   }
 
   Widget buildDrawer() => const CustomerDrawer();
