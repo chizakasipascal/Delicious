@@ -1,6 +1,5 @@
 class Strings {
   Strings._();
 
-  static const String appName = "Espace Revendeur";
-  
+  static const String appName = "Bon Appetit";
 }

@@ -13,8 +13,8 @@ class BonAppetit extends StatelessWidget {
       DeviceOrientation.portraitUp,
     ]);
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      systemNavigationBarColor: themeData.primaryColor, // navigation bar color
-      statusBarColor: Colors.transparent, // status bar color
+      systemNavigationBarColor: Colors.transparent, // navigation bar color
+      statusBarColor: themeData.primaryColor, // status bar color
     ));
 
     return MaterialApp(
