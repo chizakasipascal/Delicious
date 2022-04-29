@@ -17,12 +17,13 @@ class CustomerDrawer extends StatelessWidget {
         children: DrawerData.all
             .map(
               (e) => ListTile(
+                contentPadding: const EdgeInsets.symmetric(horizontal: 5),
                 title: Text(
                   e.title,
                   style: Theme.of(context)
                       .textTheme
-                      .headline5
-                      ?.copyWith(color: kWhiteGreyColor),
+                      .bodyText1
+                      ?.copyWith(color: kGreyColor),
                 ),
                 onTap: () {},
               ),
