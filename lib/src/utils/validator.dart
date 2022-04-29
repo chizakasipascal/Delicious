@@ -1,11 +1,11 @@
 class FormValidator {
-  static FormValidator _instance;
+  static FormValidator? _instance;
 
   factory FormValidator() => _instance ??= FormValidator._();
 
   FormValidator._();
 
-  static String valueExists(dynamic value) {
+  static String? valueExists(dynamic value) {
     if (value == null || value.isEmpty) {
       return 'Veuillez remplir ce champ*';
     } else {
@@ -13,7 +13,7 @@ class FormValidator {
     }
   }
 
-  static String validatePassword(dynamic value) {
+  static String? validatePassword(dynamic value) {
     var emptyResult = valueExists(value);
     if (emptyResult == null || emptyResult.isEmpty) {
       var pattern = r'^(?=.*?[A-Z])(?=.*?[a-z]).{6,}$';
@@ -28,7 +28,7 @@ class FormValidator {
     }
   }
 
-  static String validatePhoneNumber(dynamic value) {
+  static String? validatePhoneNumber(dynamic value) {
     var pattern = r'^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$';
     var regExp = RegExp(pattern);
     var emptyResult = valueExists(value);
@@ -41,7 +41,7 @@ class FormValidator {
     }
   }
 
-  static String validateEmail(dynamic value) {
+  static String? validateEmail(dynamic value) {
     var pattern =
         r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
     var regExp = RegExp(pattern);

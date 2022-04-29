@@ -1,20 +1,29 @@
-import 'package:espace_revendeur/src/const/font_family.dart';
-import 'package:espace_revendeur/src/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 final ThemeData themeData = ThemeData(
-  visualDensity: VisualDensity.adaptivePlatformDensity,
-  primaryColor: kRedColor,
-  textTheme: _textTheme,
-  fontFamily: FontFamily.ubuntu,
-  splashColor: kRedColor,
-  colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.red)
-      .copyWith(secondary: kRedColor),
-  textSelectionTheme: TextSelectionThemeData(cursorColor: Colors.black),
-);
+  // Define the default brightness and colors.
+  brightness: Brightness.dark,
+  primaryColor: Colors.lightBlue[800],
 
-final TextTheme _textTheme = TextTheme(
-  subtitle2: TextStyle(
-    color: kTextColor,
+  // Define the default font family.
+  fontFamily: 'Georgia',
+
+  // Define the default `TextTheme`. Use this to specify the default
+  // text styling for headlines, titles, bodies of text, and more.
+  textTheme: const TextTheme(
+    headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+    headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
+    bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
   ),
+  // visualDensity: VisualDensity.adaptivePlatformDensity,
+  // primaryColor: kRedColor,
+  // textTheme: TextTheme(
+  // subtitle2: TextStyle(
+  //   color: kTextColor,
+  // ),
+  // fontFamily: FontFamily.ubuntu,
+  // splashColor: kRedColor,
+  // colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.red)
+  //     .copyWith(secondary: kRedColor),
+  // textSelectionTheme: TextSelectionThemeData(cursorColor: Colors.black),
 );
