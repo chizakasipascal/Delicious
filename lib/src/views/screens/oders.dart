@@ -1,9 +1,9 @@
 import 'package:bonappetit/src/utils/colors.dart';
 import 'package:flutter/material.dart';
 
-class Delicious extends StatelessWidget {
+class Orders extends StatelessWidget {
   final VoidCallback openDrawer;
-  const Delicious({Key? key, required this.openDrawer}) : super(key: key);
+  const Orders({Key? key, required this.openDrawer}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

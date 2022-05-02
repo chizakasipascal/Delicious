@@ -17,7 +17,7 @@ class _HomeState extends State<Home> {
   late double yOffset;
   late double scaleFactory;
   late bool isDrawerOpen;
-  DrawerItems items = DrawerData.home;
+  DrawerItems items = DrawerData.Orders;
   bool isDragging = false;
 
   @override
@@ -61,35 +61,35 @@ class _HomeState extends State<Home> {
           child: CustomerDrawer(
             onSelectedItem: (value) {
               switch (value) {
-                case DrawerData.home:
+                case DrawerData.Orders:
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text("${value.title}"),
                     ),
                   );
                   return;
-                case DrawerData.explore:
+                case DrawerData.Profile:
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text("${value.title}"),
                     ),
                   );
                   return;
-                case DrawerData.favorite:
+                case DrawerData.Delivery:
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text("${value.title}"),
                     ),
                   );
                   return;
-                case DrawerData.messages:
+                case DrawerData.Payement:
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text("${value.title}"),
                     ),
                   );
                   return;
-                case DrawerData.profile:
+                case DrawerData.Contact:
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text("${value.title}"),
@@ -103,7 +103,7 @@ class _HomeState extends State<Home> {
                     ),
                   );
                   return;
-                case DrawerData.logout:
+                case DrawerData.helps:
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text("${value.title}"),
@@ -163,8 +163,8 @@ class _HomeState extends State<Home> {
 
   Widget getDrawerPage() {
     switch (items) {
-      case DrawerData.home:
-        return Delicious(openDrawer: () => openDrawer());
+      case DrawerData.Orders:
+        return Orders(openDrawer: () => openDrawer());
       // case DrawerData.profile:
       //   return Container(
       //     height: 100,
@@ -172,7 +172,7 @@ class _HomeState extends State<Home> {
       //     color: Colors.green,
       //   );
       default:
-        return Delicious(openDrawer: () => openDrawer());
+        return Orders(openDrawer: () => openDrawer());
     }
   }
 }
