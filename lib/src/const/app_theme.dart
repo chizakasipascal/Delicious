@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 final ThemeData themeData = ThemeData(
   fontFamily: FontFamily.roboto,
   primaryColor: KPrimary,
+  primarySwatch: KPrimary,
   splashColor: KPrimary.withOpacity(.5),
   visualDensity: VisualDensity.adaptivePlatformDensity,
   textSelectionTheme: const TextSelectionThemeData(cursorColor: KPrimary),

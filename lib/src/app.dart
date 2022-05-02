@@ -1,3 +1,4 @@
+import 'package:bonappetit/src/utils/colors.dart';
 import 'package:bonappetit/src/views/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -5,16 +6,17 @@ import 'const/app_theme.dart';
 import 'const/routes.dart';
 import 'const/strings.dart';
 
-/// Widget Application Espace Revendeur
 class BonAppetit extends StatelessWidget {
+  const BonAppetit({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]);
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       systemNavigationBarColor: Colors.transparent, // navigation bar color
-      statusBarColor: themeData.primaryColor, // status bar color
+      statusBarColor: kWhiteGreyColor, // status bar color
     ));
 
     return MaterialApp(

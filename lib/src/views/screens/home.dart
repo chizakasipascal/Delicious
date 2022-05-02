@@ -1,6 +1,6 @@
 import 'package:bonappetit/src/utils/colors.dart';
+import 'package:bonappetit/src/views/screens/screens.dart';
 import 'package:flutter/material.dart';
-
 import '../widgets/widgets.dart';
 
 class Home extends StatefulWidget {
@@ -11,67 +11,52 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  double xOffset = 0;
-  double yOffset = 0;
+  late double xOffset;
+  late double yOffset;
+  late double scaleFactory;
 
   @override
   void initState() {
-    closeDrawer();
     super.initState();
+    closeDrawer();
   }
 
   void openDrawer() => setState(() {
-        print("object");
-        xOffset = 230;
-        yOffset = 150;
+        xOffset = 230.0;
+        yOffset = 150.0;
+        scaleFactory = 0.75;
       });
 
   void closeDrawer() => setState(() {
-        xOffset = 0;
-        yOffset = 0;
+        xOffset = 0.0;
+        yOffset = 0.0;
+        scaleFactory = 1;
       });
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kWhiteGreyColor,
       body: Stack(
         children: [
-          SafeArea(
-            child: buildDrawer(),
-          ),
-          GestureDetector(
-            onTap: closeDrawer,
-            child: AnimatedContainer(
-              duration: const Duration(milliseconds: 2500),
-              child: Container(
-                transform: Matrix4.translationValues(xOffset, yOffset, 0),
-                child: DelicousHome(onClicked: openDrawer),
-              ),
-            ),
-          )
+          buildDrawer(),
+          buildPage(),
         ],
       ),
     );
   }
 
-  Widget buildDrawer() => const CustomerDrawer();
-}
-
-class DelicousHome extends StatelessWidget {
-  final VoidCallback onClicked;
-  const DelicousHome({Key? key, required this.onClicked}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () => onClicked,
-          icon: const Icon(Icons.menu),
+  Widget buildDrawer() => const SafeArea(child: CustomerDrawer());
+  Widget buildPage() {
+    return GestureDetector(
+      onTap: () => closeDrawer(),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 2500),
+        child: Container(
+          transform: Matrix4.translationValues(xOffset, yOffset, 0)
+            ..scale(scaleFactory),
+          child: Delicious(openDrawer: () => openDrawer()),
         ),
-      ),
-      body: Container(
-        color: Colors.red,
       ),
     );
   }
