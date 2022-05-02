@@ -1,12 +1,18 @@
+import 'package:bonappetit/src/views/widgets/drawerMenuIcon.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatelessWidget {
-  const Profile({Key? key}) : super(key: key);
+  final VoidCallback openDrawer;
+  const Profile({Key? key, required this.openDrawer}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text("Profile"),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        leading: DrawerMenuIcon(openDrawer: () => openDrawer()),
+      ),
+      body: const Text("Profile"),
     );
   }
 }

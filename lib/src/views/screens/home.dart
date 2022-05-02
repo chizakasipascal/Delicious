@@ -61,55 +61,55 @@ class _HomeState extends State<Home> {
           child: CustomerDrawer(
             onSelectedItem: (value) {
               switch (value) {
-                case DrawerData.Orders:
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text("${value.title}"),
-                    ),
-                  );
-                  return;
-                case DrawerData.Profile:
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text("${value.title}"),
-                    ),
-                  );
-                  return;
-                case DrawerData.Delivery:
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text("${value.title}"),
-                    ),
-                  );
-                  return;
-                case DrawerData.Payement:
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text("${value.title}"),
-                    ),
-                  );
-                  return;
-                case DrawerData.Contact:
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text("${value.title}"),
-                    ),
-                  );
-                  return;
-                case DrawerData.settings:
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text("${value.title}"),
-                    ),
-                  );
-                  return;
-                case DrawerData.helps:
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text("${value.title}"),
-                    ),
-                  );
-                  return;
+                // case DrawerData.Orders:
+                //   ScaffoldMessenger.of(context).showSnackBar(
+                //     SnackBar(
+                //       content: Text("${value.title}"),
+                //     ),
+                //   );
+                //   return;
+                // case DrawerData.Profile:
+                //   ScaffoldMessenger.of(context).showSnackBar(
+                //     SnackBar(
+                //       content: Text("${value.title}"),
+                //     ),
+                //   );
+                //   return;
+                // case DrawerData.Delivery:
+                //   ScaffoldMessenger.of(context).showSnackBar(
+                //     SnackBar(
+                //       content: Text("${value.title}"),
+                //     ),
+                //   );
+                //   return;
+                // case DrawerData.Payement:
+                //   ScaffoldMessenger.of(context).showSnackBar(
+                //     SnackBar(
+                //       content: Text("${value.title}"),
+                //     ),
+                //   );
+                //   return;
+                // case DrawerData.Contact:
+                //   ScaffoldMessenger.of(context).showSnackBar(
+                //     SnackBar(
+                //       content: Text("${value.title}"),
+                //     ),
+                //   );
+                //   return;
+                // case DrawerData.settings:
+                //   ScaffoldMessenger.of(context).showSnackBar(
+                //     SnackBar(
+                //       content: Text("${value.title}"),
+                //     ),
+                //   );
+                //   return;
+                // case DrawerData.helps:
+                //   ScaffoldMessenger.of(context).showSnackBar(
+                //     SnackBar(
+                //       content: Text("${value.title}"),
+                //     ),
+                //   );
+                // return;
                 default:
                   setState(() => items = value);
                   closeDrawer();
@@ -152,8 +152,18 @@ class _HomeState extends State<Home> {
                 color: isDrawerOpen ? kGreyColor : KPrimary,
                 borderRadius: BorderRadius.circular(isDrawerOpen ? 10 : 0.0),
               ),
-              child:
-                  getDrawerPage(), //Delicious(openDrawer: () => openDrawer()),
+              child: Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  getDrawerPage(),
+                  Padding(
+                    padding: isDrawerOpen
+                        ? const EdgeInsets.only(left: 10.0, top: 10)
+                        : const EdgeInsets.only(left: 0.0, top: 0.0),
+                    child: getDrawerPage(),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -165,12 +175,18 @@ class _HomeState extends State<Home> {
     switch (items) {
       case DrawerData.Orders:
         return Orders(openDrawer: () => openDrawer());
-      // case DrawerData.profile:
-      //   return Container(
-      //     height: 100,
-      //     width: 100,
-      //     color: Colors.green,
-      //   );
+      case DrawerData.Profile:
+        return Profile(openDrawer: () => openDrawer());
+      case DrawerData.Delivery:
+        return Delivery(openDrawer: () => openDrawer());
+      case DrawerData.Payement:
+        return Payement(openDrawer: () => openDrawer());
+      case DrawerData.Contact:
+        return Contact(openDrawer: () => openDrawer());
+      case DrawerData.settings:
+        return Settings(openDrawer: () => openDrawer());
+      case DrawerData.helps:
+        return Settings(openDrawer: () => openDrawer());
       default:
         return Orders(openDrawer: () => openDrawer());
     }

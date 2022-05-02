@@ -1,4 +1,4 @@
-import 'package:bonappetit/src/utils/colors.dart';
+import 'package:bonappetit/src/views/widgets/drawerMenuIcon.dart';
 import 'package:flutter/material.dart';
 
 class Orders extends StatelessWidget {
@@ -16,120 +16,7 @@ class Orders extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Card(
-                  elevation: 10,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  child: ClipOval(
-                    child: Material(
-                      color: Colors.transparent,
-                      child: InkWell(
-                        splashColor: KPrimary.withOpacity(.5),
-                        child: const SizedBox(
-                          width: 35,
-                          height: 35,
-                          child: Icon(
-                            Icons.menu,
-                            color: kGreyColor,
-                            size: 19,
-                          ),
-                        ),
-                        onTap: () => openDrawer(),
-                      ),
-                    ),
-                  ),
-                ),
-                const Card(
-                  child: ListTile(
-                    title: Text("List Item 1"),
-                  ),
-                ),
-                const Card(
-                  child: ListTile(
-                    title: Text("List Item 2"),
-                  ),
-                ),
-                const Card(
-                  child: ListTile(
-                    title: Text("List Item 3"),
-                  ),
-                ),
-                const Card(
-                  child: ListTile(
-                    title: Text("List Item 1"),
-                  ),
-                ),
-                const Card(
-                  child: ListTile(
-                    title: Text("List Item 2"),
-                  ),
-                ),
-                const Card(
-                  child: ListTile(
-                    title: Text("List Item 3"),
-                  ),
-                ),
-                const Card(
-                  child: ListTile(
-                    title: Text("List Item 1"),
-                  ),
-                ),
-                const Card(
-                  child: ListTile(
-                    title: Text("List Item 2"),
-                  ),
-                ),
-                const Card(
-                  child: ListTile(
-                    title: Text("List Item 3"),
-                  ),
-                ),
-                const Card(
-                  child: ListTile(
-                    title: Text("List Item 1"),
-                  ),
-                ),
-                const Card(
-                  child: ListTile(
-                    title: Text("List Item 2"),
-                  ),
-                ),
-                const Card(
-                  child: ListTile(
-                    title: Text("List Item 3"),
-                  ),
-                ),
-                const Card(
-                  child: ListTile(
-                    title: Text("List Item 1"),
-                  ),
-                ),
-                const Card(
-                  child: ListTile(
-                    title: Text("List Item 2"),
-                  ),
-                ),
-                const Card(
-                  child: ListTile(
-                    title: Text("List Item 3"),
-                  ),
-                ),
-                const Card(
-                  child: ListTile(
-                    title: Text("List Item 1"),
-                  ),
-                ),
-                const Card(
-                  child: ListTile(
-                    title: Text("List Item 2"),
-                  ),
-                ),
-                const Card(
-                  child: ListTile(
-                    title: Text("List Item 3"),
-                  ),
-                ),
+                DrawerMenuIcon(openDrawer: openDrawer),
               ],
             ),
           ),

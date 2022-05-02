@@ -5,3 +5,4 @@ export 'helps.dart';
 export 'home.dart';
 export 'profile.dart';
 export 'settings.dart';
+export 'payement.dart';

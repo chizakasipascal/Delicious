@@ -1,9 +1,9 @@
 import 'package:bonappetit/src/views/widgets/drawerMenuIcon.dart';
 import 'package:flutter/material.dart';
 
-class Contact extends StatelessWidget {
+class Payement extends StatelessWidget {
   final VoidCallback openDrawer;
-  const Contact({Key? key, required this.openDrawer}) : super(key: key);
+  const Payement({Key? key, required this.openDrawer}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class Contact extends StatelessWidget {
         backgroundColor: Colors.red,
         leading: DrawerMenuIcon(openDrawer: () => openDrawer()),
       ),
-      body: const Text("Contact"),
+      body: const Text("Payement"),
     );
   }
 }
