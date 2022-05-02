@@ -1,3 +1,5 @@
+import 'package:bonappetit/src/data/drawerItemsData.dart';
+import 'package:bonappetit/src/models/drawerItmes.dart';
 import 'package:bonappetit/src/utils/colors.dart';
 import 'package:bonappetit/src/views/screens/screens.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +16,9 @@ class _HomeState extends State<Home> {
   late double xOffset;
   late double yOffset;
   late double scaleFactory;
+  late bool isDrawerOpen;
+  DrawerItems items = DrawerData.home;
+  bool isDragging = false;
 
   @override
   void initState() {
@@ -26,6 +31,7 @@ class _HomeState extends State<Home> {
         xOffset = 230.0;
         yOffset = 150.0;
         scaleFactory = 0.75;
+        isDrawerOpen = true;
       });
 
   void closeDrawer() => setState(() {
@@ -33,6 +39,7 @@ class _HomeState extends State<Home> {
         xOffset = 0.0;
         yOffset = 0.0;
         scaleFactory = 1;
+        isDrawerOpen = false;
       });
 
   @override
@@ -48,16 +55,124 @@ class _HomeState extends State<Home> {
     );
   }
 
-  Widget buildDrawer() => const SafeArea(child: CustomerDrawer());
+  Widget buildDrawer() => SafeArea(
+        child: SizedBox(
+          width: xOffset,
+          child: CustomerDrawer(
+            onSelectedItem: (value) {
+              switch (value) {
+                case DrawerData.home:
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text("${value.title}"),
+                    ),
+                  );
+                  return;
+                case DrawerData.explore:
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text("${value.title}"),
+                    ),
+                  );
+                  return;
+                case DrawerData.favorite:
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text("${value.title}"),
+                    ),
+                  );
+                  return;
+                case DrawerData.messages:
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text("${value.title}"),
+                    ),
+                  );
+                  return;
+                case DrawerData.profile:
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text("${value.title}"),
+                    ),
+                  );
+                  return;
+                case DrawerData.settings:
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text("${value.title}"),
+                    ),
+                  );
+                  return;
+                case DrawerData.logout:
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text("${value.title}"),
+                    ),
+                  );
+                  return;
+                default:
+                  setState(() => items = value);
+                  closeDrawer();
+              }
+            },
+          ),
+        ),
+      );
   Widget buildPage() {
-    return GestureDetector(
-      onTap: () => closeDrawer(),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 250),
-        transform: Matrix4.translationValues(xOffset, yOffset, 0)
-          ..scale(scaleFactory),
-        child: Delicious(openDrawer: () => openDrawer()),
+    return WillPopScope(
+      onWillPop: () async {
+        if (isDrawerOpen) {
+          closeDrawer();
+          return false;
+        } else {
+          return true;
+        }
+      },
+      child: GestureDetector(
+        onTap: () => closeDrawer(),
+        onHorizontalDragStart: (details) => isDragging = true,
+        onHorizontalDragUpdate: (details) {
+          if (!isDragging) return;
+          const delta = 1;
+          if (details.delta.dx > delta) {
+            openDrawer();
+          } else if (details.delta.dx < -delta) {
+            closeDrawer();
+          }
+          isDragging = false;
+        },
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 250),
+          transform: Matrix4.translationValues(xOffset, yOffset, 0)
+            ..scale(scaleFactory),
+          child: AbsorbPointer(
+            absorbing: isDrawerOpen,
+            child: Container(
+              decoration: BoxDecoration(
+                color: isDrawerOpen ? kGreyColor : KPrimary,
+                borderRadius: BorderRadius.circular(isDrawerOpen ? 10 : 0.0),
+              ),
+              child:
+                  getDrawerPage(), //Delicious(openDrawer: () => openDrawer()),
+            ),
+          ),
+        ),
       ),
     );
+  }
+
+  Widget getDrawerPage() {
+    switch (items) {
+      case DrawerData.home:
+        return Delicious(openDrawer: () => openDrawer());
+      // case DrawerData.profile:
+      //   return Container(
+      //     height: 100,
+      //     width: 100,
+      //     color: Colors.green,
+      //   );
+      default:
+        return Delicious(openDrawer: () => openDrawer());
+    }
   }
 }
