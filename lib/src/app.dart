@@ -6,8 +6,9 @@ import 'const/app_theme.dart';
 import 'const/routes.dart';
 import 'const/strings.dart';
 
-/// Widget Application Espace Revendeur
 class BonAppetit extends StatelessWidget {
+  const BonAppetit({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([

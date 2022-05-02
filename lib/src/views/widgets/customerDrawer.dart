@@ -17,49 +17,6 @@ class CustomerDrawer extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: SizedBox(
-                        width: 160,
-                        height: 40,
-                        child: MaterialButton(
-                          onPressed: () {
-                            print("Log out");
-                          },
-                          color: KPrimary,
-                          child: Row(
-                            children: [
-                              const SizedBox(width: 3),
-                              Container(
-                                height: 30,
-                                width: 30,
-                                decoration: const BoxDecoration(
-                                  color: kWhiteGreyColor,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(100),
-                                  ),
-                                ),
-                                child: const Icon(
-                                  Icons.close,
-                                  color: KPrimary,
-                                ),
-                              ),
-                              const SizedBox(width: 10),
-                              Text(
-                                "Log out",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium
-                                    ?.copyWith(
-                                      color: kWhiteGreyColor,
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
                     SizedBox(
                       height: 100.0,
                       width: 100.0,
@@ -86,6 +43,53 @@ class CustomerDrawer extends StatelessWidget {
               ),
             ),
             builDrawerItems(context),
+            Padding(
+              padding: const EdgeInsets.only(top: 115.0, left: 20.0),
+              child: Align(
+                alignment: Alignment.bottomLeft,
+                child: SizedBox(
+                  width: 140,
+                  height: 40,
+                  child: MaterialButton(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(color: Theme.of(context).primaryColor),
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                    onPressed: () {
+                      print("Log out");
+                    },
+                    color: KPrimary,
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 30,
+                          width: 30,
+                          decoration: const BoxDecoration(
+                            color: kWhiteGreyColor,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(100),
+                            ),
+                          ),
+                          child: const Icon(
+                            Icons.close,
+                            color: KPrimary,
+                          ),
+                        ),
+                        const SizedBox(width: 5),
+                        Text(
+                          "Log out",
+                          style:
+                              Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                    color: kWhiteGreyColor,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       );
