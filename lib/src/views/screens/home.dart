@@ -22,12 +22,14 @@ class _HomeState extends State<Home> {
   }
 
   void openDrawer() => setState(() {
+        print("Open");
         xOffset = 230.0;
         yOffset = 150.0;
         scaleFactory = 0.75;
       });
 
   void closeDrawer() => setState(() {
+        print("Close");
         xOffset = 0.0;
         yOffset = 0.0;
         scaleFactory = 1;
@@ -51,12 +53,10 @@ class _HomeState extends State<Home> {
     return GestureDetector(
       onTap: () => closeDrawer(),
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 2500),
-        child: Container(
-          transform: Matrix4.translationValues(xOffset, yOffset, 0)
-            ..scale(scaleFactory),
-          child: Delicious(openDrawer: () => openDrawer()),
-        ),
+        duration: const Duration(milliseconds: 250),
+        transform: Matrix4.translationValues(xOffset, yOffset, 0)
+          ..scale(scaleFactory),
+        child: Delicious(openDrawer: () => openDrawer()),
       ),
     );
   }
