@@ -1,2 +1,8 @@
+export 'oders.dart';
+export 'contact.dart';
+export 'delivery.dart';
+export 'helps.dart';
 export 'home.dart';
-export 'delicious.dart';
+export 'profile.dart';
+export 'settings.dart';
+export 'payement.dart';
