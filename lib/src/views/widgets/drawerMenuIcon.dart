@@ -2,12 +2,13 @@ import 'package:bonappetit/src/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class DrawerMenuIcon extends StatelessWidget {
+  final VoidCallback openDrawer;
+  final bool isDrawerOpen;
   const DrawerMenuIcon({
     Key? key,
     required this.openDrawer,
+    required this.isDrawerOpen,
   }) : super(key: key);
-
-  final VoidCallback openDrawer;
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +22,11 @@ class DrawerMenuIcon extends StatelessWidget {
           color: Colors.transparent,
           child: InkWell(
             splashColor: KPrimary.withOpacity(.5),
-            child: const SizedBox(
+            child: SizedBox(
               width: 35,
               height: 35,
               child: Icon(
-                Icons.menu,
+                isDrawerOpen ? Icons.arrow_back : Icons.menu,
                 color: kGreyColor,
                 size: 19,
               ),

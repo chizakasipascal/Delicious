@@ -27,7 +27,6 @@ class _HomeState extends State<Home> {
   }
 
   void openDrawer() => setState(() {
-        print("Open");
         xOffset = 230.0;
         yOffset = 150.0;
         scaleFactory = 0.75;
@@ -35,7 +34,6 @@ class _HomeState extends State<Home> {
       });
 
   void closeDrawer() => setState(() {
-        print("Close");
         xOffset = 0.0;
         yOffset = 0.0;
         scaleFactory = 1;
@@ -55,67 +53,65 @@ class _HomeState extends State<Home> {
     );
   }
 
-  Widget buildDrawer() => SafeArea(
-        child: SizedBox(
-          width: xOffset,
-          child: CustomerDrawer(
-            onSelectedItem: (value) {
-              switch (value) {
-                // case DrawerData.Orders:
-                //   ScaffoldMessenger.of(context).showSnackBar(
-                //     SnackBar(
-                //       content: Text("${value.title}"),
-                //     ),
-                //   );
-                //   return;
-                // case DrawerData.Profile:
-                //   ScaffoldMessenger.of(context).showSnackBar(
-                //     SnackBar(
-                //       content: Text("${value.title}"),
-                //     ),
-                //   );
-                //   return;
-                // case DrawerData.Delivery:
-                //   ScaffoldMessenger.of(context).showSnackBar(
-                //     SnackBar(
-                //       content: Text("${value.title}"),
-                //     ),
-                //   );
-                //   return;
-                // case DrawerData.Payement:
-                //   ScaffoldMessenger.of(context).showSnackBar(
-                //     SnackBar(
-                //       content: Text("${value.title}"),
-                //     ),
-                //   );
-                //   return;
-                // case DrawerData.Contact:
-                //   ScaffoldMessenger.of(context).showSnackBar(
-                //     SnackBar(
-                //       content: Text("${value.title}"),
-                //     ),
-                //   );
-                //   return;
-                // case DrawerData.settings:
-                //   ScaffoldMessenger.of(context).showSnackBar(
-                //     SnackBar(
-                //       content: Text("${value.title}"),
-                //     ),
-                //   );
-                //   return;
-                // case DrawerData.helps:
-                //   ScaffoldMessenger.of(context).showSnackBar(
-                //     SnackBar(
-                //       content: Text("${value.title}"),
-                //     ),
-                //   );
-                // return;
-                default:
-                  setState(() => items = value);
-                  closeDrawer();
-              }
-            },
-          ),
+  Widget buildDrawer() => SizedBox(
+        width: xOffset,
+        child: CustomerDrawer(
+          onSelectedItem: (value) {
+            switch (value) {
+              // case DrawerData.Orders:
+              //   ScaffoldMessenger.of(context).showSnackBar(
+              //     SnackBar(
+              //       content: Text("${value.title}"),
+              //     ),
+              //   );
+              //   return;
+              // case DrawerData.Profile:
+              //   ScaffoldMessenger.of(context).showSnackBar(
+              //     SnackBar(
+              //       content: Text("${value.title}"),
+              //     ),
+              //   );
+              //   return;
+              // case DrawerData.Delivery:
+              //   ScaffoldMessenger.of(context).showSnackBar(
+              //     SnackBar(
+              //       content: Text("${value.title}"),
+              //     ),
+              //   );
+              //   return;
+              // case DrawerData.Payement:
+              //   ScaffoldMessenger.of(context).showSnackBar(
+              //     SnackBar(
+              //       content: Text("${value.title}"),
+              //     ),
+              //   );
+              //   return;
+              // case DrawerData.Contact:
+              //   ScaffoldMessenger.of(context).showSnackBar(
+              //     SnackBar(
+              //       content: Text("${value.title}"),
+              //     ),
+              //   );
+              //   return;
+              // case DrawerData.settings:
+              //   ScaffoldMessenger.of(context).showSnackBar(
+              //     SnackBar(
+              //       content: Text("${value.title}"),
+              //     ),
+              //   );
+              //   return;
+              // case DrawerData.helps:
+              //   ScaffoldMessenger.of(context).showSnackBar(
+              //     SnackBar(
+              //       content: Text("${value.title}"),
+              //     ),
+              //   );
+              // return;
+              default:
+                setState(() => items = value);
+                closeDrawer();
+            }
+          },
         ),
       );
   Widget buildPage() {
@@ -156,12 +152,14 @@ class _HomeState extends State<Home> {
                 clipBehavior: Clip.none,
                 children: [
                   getDrawerPage(),
-                  Padding(
-                    padding: isDrawerOpen
-                        ? const EdgeInsets.only(left: 10.0, top: 10)
-                        : const EdgeInsets.only(left: 0.0, top: 0.0),
-                    child: getDrawerPage(),
-                  ),
+                  //TODO:GlassForm effect
+
+                  // Padding(
+                  //   padding: isDrawerOpen
+                  //       ? const EdgeInsets.only(left: 10.0, top: 10)
+                  //       : const EdgeInsets.only(left: 0.0, top: 0.0),
+                  //   child: getDrawerPage(),
+                  // ),
                 ],
               ),
             ),
@@ -174,21 +172,45 @@ class _HomeState extends State<Home> {
   Widget getDrawerPage() {
     switch (items) {
       case DrawerData.Orders:
-        return Orders(openDrawer: () => openDrawer());
+        return Orders(
+          openDrawer: () => openDrawer(),
+          isDrawerOpen: isDrawerOpen,
+        );
       case DrawerData.Profile:
-        return Profile(openDrawer: () => openDrawer());
+        return Profile(
+          openDrawer: () => openDrawer(),
+          isDrawerOpen: isDrawerOpen,
+        );
       case DrawerData.Delivery:
-        return Delivery(openDrawer: () => openDrawer());
+        return Delivery(
+          openDrawer: () => openDrawer(),
+          isDrawerOpen: isDrawerOpen,
+        );
       case DrawerData.Payement:
-        return Payement(openDrawer: () => openDrawer());
+        return Payement(
+          openDrawer: () => openDrawer(),
+          isDrawerOpen: isDrawerOpen,
+        );
       case DrawerData.Contact:
-        return Contact(openDrawer: () => openDrawer());
+        return Contact(
+          openDrawer: () => openDrawer(),
+          isDrawerOpen: isDrawerOpen,
+        );
       case DrawerData.settings:
-        return Settings(openDrawer: () => openDrawer());
+        return Settings(
+          openDrawer: () => openDrawer(),
+          isDrawerOpen: isDrawerOpen,
+        );
       case DrawerData.helps:
-        return Settings(openDrawer: () => openDrawer());
+        return Settings(
+          openDrawer: () => openDrawer(),
+          isDrawerOpen: isDrawerOpen,
+        );
       default:
-        return Orders(openDrawer: () => openDrawer());
+        return Orders(
+          openDrawer: () => openDrawer(),
+          isDrawerOpen: isDrawerOpen,
+        );
     }
   }
 }
