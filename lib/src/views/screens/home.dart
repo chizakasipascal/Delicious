@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:bonappetit/src/data/drawerItemsData.dart';
 import 'package:bonappetit/src/models/drawerItmes.dart';
 import 'package:bonappetit/src/utils/colors.dart';
@@ -46,7 +48,22 @@ class _HomeState extends State<Home> {
       backgroundColor: kWhiteGreyColor,
       body: Stack(
         children: [
-          buildDrawer(),
+          Container(
+            height: 150,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+              color: Colors.grey.shade200.withOpacity(0.5),
+            ),
+            child: Image.network(
+                "https://www.rwandayp.com/img/cats/fast-food.jpg"),
+          ),
+          BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+            child: ConstrainedBox(
+              constraints: const BoxConstraints.expand(),
+              child: buildDrawer(),
+            ),
+          ),
           buildPage(),
         ],
       ),
@@ -148,20 +165,7 @@ class _HomeState extends State<Home> {
                 color: isDrawerOpen ? kGreyColor : KPrimary,
                 borderRadius: BorderRadius.circular(isDrawerOpen ? 10 : 0.0),
               ),
-              child: Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  getDrawerPage(),
-                  //TODO:GlassForm effect
-
-                  // Padding(
-                  //   padding: isDrawerOpen
-                  //       ? const EdgeInsets.only(left: 10.0, top: 10)
-                  //       : const EdgeInsets.only(left: 0.0, top: 0.0),
-                  //   child: getDrawerPage(),
-                  // ),
-                ],
-              ),
+              child: getDrawerPage(),
             ),
           ),
         ),
