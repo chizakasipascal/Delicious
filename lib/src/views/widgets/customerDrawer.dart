@@ -25,7 +25,7 @@ class CustomerDrawer extends StatelessWidget {
                       height: 100.0,
                       width: 100.0,
                       child: CircleAvatar(
-                        backgroundColor: KPrimary.withOpacity(.5),
+                        backgroundColor: kPrimary.withOpacity(.5),
                         child: const SizedBox(
                           height: 90.0,
                           width: 90.0,

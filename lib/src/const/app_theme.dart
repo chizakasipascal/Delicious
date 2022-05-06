@@ -7,9 +7,9 @@ final ThemeData themeData = ThemeData(
   textTheme: Platform.isAndroid
       ? GoogleFonts.robotoTextTheme()
       : GoogleFonts.sueEllenFranciscoTextTheme(),
-  primaryColor: KPrimary,
-  primarySwatch: KPrimary,
-  splashColor: KPrimary.withOpacity(.5),
+  primaryColor: kPrimary,
+  primarySwatch: kPrimary,
+  splashColor: kPrimary.withOpacity(.5),
   visualDensity: VisualDensity.adaptivePlatformDensity,
-  textSelectionTheme: const TextSelectionThemeData(cursorColor: KPrimary),
+  textSelectionTheme: const TextSelectionThemeData(cursorColor: kPrimary),
 );
