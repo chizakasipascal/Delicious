@@ -16,8 +16,8 @@ class Delicious extends StatelessWidget {
     ]);
 
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
-      systemNavigationBarColor: KPrimary, // navigation bar color
-      statusBarColor: KPrimary, // status bar color
+      systemNavigationBarColor: kPrimary, // navigation bar color
+      statusBarColor: kPrimary, // status bar color
     ));
     // SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [
     //   SystemUiOverlay.top,

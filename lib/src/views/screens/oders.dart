@@ -1,3 +1,4 @@
+import 'package:bonappetit/src/const/app_theme.dart';
 import 'package:bonappetit/src/utils/colors.dart';
 import 'package:bonappetit/src/views/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -74,11 +75,39 @@ class _OrdersState extends State<Orders> {
               //       const SearchResultsListView(searchTerm: null),
               // ),
               const SizedBox(height: 10),
+
               Container(
-                height: 130,
-                width: 85,
-                decoration: const BoxDecoration(
-                  color: KPrimary,
+                height: 120,
+                width: 70,
+                decoration: BoxDecoration(
+                  color: kPrimary,
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: 50,
+                        width: 50,
+                        decoration: BoxDecoration(
+                          color: kWhiteGreyColor,
+                          borderRadius: BorderRadius.circular(100),
+                        ),
+                        child: const Icon(
+                          Icons.food_bank,
+                          color: kPrimary,
+                        ),
+                      ),
+                    ),
+                    Text(
+                      "Burger",
+                      style: themeData.textTheme.bodySmall!.copyWith(
+                        color: kWhiteGreyColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  ],
                 ),
               )
             ],

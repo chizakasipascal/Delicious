@@ -21,7 +21,7 @@ class DrawerMenuIcon extends StatelessWidget {
         child: Material(
           color: Colors.transparent,
           child: InkWell(
-            splashColor: KPrimary.withOpacity(.5),
+            splashColor: kPrimary.withOpacity(.5),
             child: SizedBox(
               width: 35,
               height: 35,

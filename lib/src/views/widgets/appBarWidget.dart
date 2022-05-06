@@ -52,7 +52,7 @@ class AppBarWidget extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .bodyMedium
-                    ?.copyWith(color: KPrimary, fontWeight: FontWeight.bold),
+                    ?.copyWith(color: kPrimary, fontWeight: FontWeight.bold),
               ),
             ],
           ),

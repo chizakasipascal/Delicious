@@ -162,7 +162,7 @@ class _HomeState extends State<Home> {
             absorbing: isDrawerOpen,
             child: Container(
               decoration: BoxDecoration(
-                color: isDrawerOpen ? kGreyColor : KPrimary,
+                color: isDrawerOpen ? kGreyColor : kPrimary,
                 borderRadius: BorderRadius.circular(isDrawerOpen ? 10 : 0.0),
               ),
               child: getDrawerPage(),
